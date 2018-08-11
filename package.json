@@ -1,0 +1,23 @@
+{
+  "name": "gravity-boop",
+  "version": "1.0.0",
+  "description": "Gravity Boop",
+  "main": "index.js",
+  "dependencies": {
+    "phaser": "^3.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurenRui/gravity-boop.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laurenRui/gravity-boop/issues"
+  },
+  "homepage": "https://github.com/laurenRui/gravity-boop#readme"
+}
