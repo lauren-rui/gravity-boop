@@ -25,10 +25,11 @@ function create() {
     platforms.create(26, 300, 'leftWall');
     platforms.create(775, 300, 'rightWall');
 
-    this.physics.add.collider(player, obsticle);
+    this.physics.add.collider(player, platforms);
+    this.physics.add.collider(obsticle, platforms);
 
     cursors = this.input.keyboard.createCursorKeys();
-    jumpButton = this.input.keyboard.on(Phaser.Keyboard.SPACEBAR);
+    jumpButton = this.input.keyboard.SPACEBAR;
 
 }
     // jumpButton = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
