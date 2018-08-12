@@ -1,7 +1,7 @@
 function create() {
 
     player = this.physics.add.sprite(150, 200, 'player');
-
+    this.add.image(800, 600, ArrowBG);
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
     player.body.setGravityY(500);
@@ -30,7 +30,7 @@ function create() {
     //obsticle.setCollideWorldBounds(true);
     //obsticle.setGravityY(500);
 
-    
+
 
     platforms = this.physics.add.staticGroup();
 
@@ -46,7 +46,7 @@ function create() {
 
 
 
-function victory (player, portal) 
+function victory (player, portal)
         {
             portal.disableBody(true, true);
             this.physics.pause();

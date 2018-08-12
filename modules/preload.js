@@ -5,6 +5,10 @@ function preload() {
         this.load.baseURL = '/assets/';
         this.load.crossOrigin = 'anonymous';
 
+        this.load.image('arrowBGup', 'ArrowBGup.png');
+        this.load.image('arrowBGdown', 'ArrowBGdown.png');
+        this.load.image('arrowBGleft', 'ArrowBGleft.png');
+        this.load.image('arrowBGright', 'ArrowBGright.png');
         this.load.image('player', 'player.png');
         this.load.image('floor', 'Floor.png');
         this.load.image('leftWall', 'Leftwall.png' );
