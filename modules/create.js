@@ -20,13 +20,14 @@ function create() {
 
     platforms = this.physics.add.staticGroup();
 
-    platforms.create(450, 15, 'roof');
-    platforms.create(450, 586, 'floor');
+    platforms.create(400, 15, 'roof');
+    platforms.create(400, 586, 'floor');
     platforms.create(26, 300, 'leftWall');
     platforms.create(775, 300, 'rightWall');
 
     this.physics.add.collider(platforms, player);
     this.physics.add.collider(obsticle, player);
+    this.physics.add.collider(platforms, obsticle);
     this.physics.add.collider(obsticle, platforms);
 
     cursors = this.input.keyboard.createCursorKeys();
