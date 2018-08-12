@@ -32,9 +32,13 @@
         this.load.baseURL = 'http://examples.phaser.io/assets/';
         this.load.crossOrigin = 'anonymous';
 
-        this.load.image('player', 'sprites/32x32.png');
-        this.load.image('platform', 'sprites/platform.png');
-        this.load.image('wall', 'sprites/waters.png' );
+        this.load.image('player', 'player.png');
+        this.load.image('floor', 'Floor.png');
+        this.load.image('leftWall', 'Leftwall.png' );
+        this.load.image('rightWall', 'Rightwall.png');
+        this.load.image('roof','Roof.png');
+        this.load.image('portal','Portal.png');
+        this.load.image('obsticle','obsticle.png');
 
     }
 
@@ -70,6 +74,8 @@
 
     var player;
     var platforms;
+    var portal;
+    var obsticle;
     var cursors;
     var jumpButton;
 
@@ -81,12 +87,24 @@
         player.setCollideWorldBounds(true);
         player.body.setGravityY(500);
 
-        platforms = this.physics.add.staticGroup();
+        portal = this.physics.add.sprite(300, 400, 'portal');
 
-        platforms.create(150, 0, 'platform');
-        platforms.create(150, 550, 'platform');
-        platforms.create(-900, 100, 'wall')
-        platforms.create(700, 100, 'wall')
+        portal.setBounce(0);
+        portal.setCollideWorldBounds(true);
+        portal.body.setGravityY(0);
+
+        obsticle= this.physics.add.sprite(250, 200, 'obsticle');
+
+        obsticle.setBounce(0.2);
+        obsticle.setCollideWorldBounds(true);
+        obsticle.body.setGravityY(500);
+
+        platforms = this.physics.add.staticGroup();
+        
+        platforms.create(150, 0, 'floor');
+        platforms.create(150, 550, 'roof');
+        platforms.create(-900, 100, 'leftWall');
+        platforms.create(700, 100, 'rightWall');
 
         this.physics.add.collider(player, platforms);
 
