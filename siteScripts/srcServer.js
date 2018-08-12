@@ -8,7 +8,7 @@ var port = 3000;
 var app = express();
 
 app.use('/phaser', express.static('node_modules/phaser'), serveIndex('node_modules/phaser', {'icons': true}))
-
+app.use('/assets', express.static('assets'), serveIndex('assets', {'icons': true}))
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../index.html'));
