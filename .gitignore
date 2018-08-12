@@ -19,6 +19,9 @@ dist
 *.map
 .updates
 
+# NPM generated files #
+package-lock.json
+
 # Sublime files #
 *.sublime-project
 *.sublime-workspace
