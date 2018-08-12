@@ -5,10 +5,11 @@ var open = require('open');
 var port = 3000;
 var app = express();
 
+app.use(express.static(__dirname + "/node_modules"));
+
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '../index.html'));
 });
-app.use("/node_modules", express.static(__dirname + "/node_modules"));
 
 app.listen(port, function(err) {
     if (err) {
