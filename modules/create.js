@@ -23,8 +23,8 @@ function create() {
 
     platforms.create(450, 10, 'roof');
     platforms.create(450, 586, 'floor');
-    platforms.create(26, 100, 'rightWall');
-    platforms.create(700, 100, 'leftWall');
+    platforms.create(26, 300, 'leftWall');
+    platforms.create(775, 300, 'rightWall');
 
     this.physics.add.collider(player, obsticle);
 
