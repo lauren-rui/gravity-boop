@@ -1,20 +1,15 @@
 
     function update () {
-        //player.setVelocityX(0);
+        player.setVelocityX(0)
 
-        if (cursors.left.isDown )
+        if (cursors.left.isDown)
          {
              player.setVelocityX(-250);
          }
         else if (cursors.right.isDown)
         {
              player.setVelocityX(250);
-        }
-        //else if(player.body.setGravityX() < 0)
-        //{
-          //  player.setVelocityX(0);
-        //}
-
+        } 
 
         if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down))
         {
