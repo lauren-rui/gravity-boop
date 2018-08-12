@@ -2,13 +2,23 @@
 <html>
 <head>
     <script type="text/javascript" src="phaser/dist/phaser.min.js"></script>
+    <script type="text/javascript" src="modules/create.js"></script>
+    <script type="text/javascript" src="modules/preload.js"></script>
+    <script type="text/javascript" src="modules/update.js"></script>
+
 </head>
 <body>
 
     <script type="text/javascript">
-    var update = require('modules/update.js');
-    var create = require('modules/create.js');
-    var preload = require('modules/preload.js');
+    // var create = require('create');
+    // var update = require('update');
+    // var preload = require('preload');
+    var player;
+    var platforms;
+    var portal;
+    var obsticle;
+    var cursors;
+    var jumpButton;
     var config = {
         type: Phaser.AUTO,
         width: 800,
