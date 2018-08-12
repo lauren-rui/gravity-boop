@@ -25,7 +25,8 @@ function create() {
     platforms.create(26, 300, 'leftWall');
     platforms.create(775, 300, 'rightWall');
 
-    this.physics.add.collider(player, platforms);
+    this.physics.add.collider(platforms, player);
+    this.physics.add.collider(obsticle, player);
     this.physics.add.collider(obsticle, platforms);
 
     cursors = this.input.keyboard.createCursorKeys();
