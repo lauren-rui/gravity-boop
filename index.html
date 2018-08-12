@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="node_modules/phaser/dist/phaser.min.js"></script>
+    <script src="/phaser/dist/phaser.min.js" type="text/javascript"></script>
 </head>
 <body>
 
@@ -100,7 +100,7 @@
         obsticle.body.setGravityY(500);
 
         platforms = this.physics.add.staticGroup();
-        
+
         platforms.create(150, 0, 'floor');
         platforms.create(150, 550, 'roof');
         platforms.create(-900, 100, 'leftWall');
