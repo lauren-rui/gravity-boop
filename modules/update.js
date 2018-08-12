@@ -1,14 +1,12 @@
 
     function update () {
 
-        //player.setVelocityX(0)
-
         if (cursors.left.isDown)
          {
              if (gravityState == 'down' || gravityState == 'up'){
                 player.setVelocityX(-250);
              } else if (gravityState == 'right' || gravityState == 'left'){
-                player.setVelocityY(-250);
+                player.setVelocityY(250);
              }
          }
         else if (cursors.right.isDown)
@@ -16,7 +14,21 @@
             if (gravityState == 'down' || gravityState == 'up'){
                player.setVelocityX(250);
             } else if (gravityState == 'right' || gravityState == 'left'){
-               player.setVelocityY(250);
+               player.setVelocityY(-250);
+            }
+        } else if (cursors.left.isUp)
+        {
+            if (gravityState == 'down' || gravityState == 'up'){
+               player.setVelocityX(0);
+            } else if (gravityState == 'right' || gravityState == 'left'){
+               player.setVelocityY(0);
+            }
+        } else if (cursors.right.isUp)
+        {
+            if (gravityState == 'down' || gravityState == 'up'){
+               player.setVelocityX(0);
+            } else if (gravityState == 'right' || gravityState == 'left'){
+               player.setVelocityY(0);
             }
         }
 
