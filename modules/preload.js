@@ -2,16 +2,16 @@ function preload() {
 
     // this.stage.backgroundColor = '#85b5e1';
 
-    this.load.baseURL = 'assets/';
-    this.load.crossOrigin = 'anonymous';
+        this.load.baseURL = '/assets/';
+        this.load.crossOrigin = 'anonymous';
 
-    this.load.image('player', 'player.png');
-    this.load.image('floor', 'Floor.png');
-    this.load.image('leftWall', 'Leftwall.png' );
-    this.load.image('rightWall', 'Rightwall.png');
-    this.load.image('roof','Roof.png');
-    this.load.image('portal','Portal.png');
-    this.load.image('obsticle','obsticle.png');
+        this.load.image('player', 'player.png');
+        this.load.image('floor', 'Floor.png');
+        this.load.image('leftWall', 'Leftwall.png' );
+        this.load.image('rightWall', 'Rightwall.png');
+        this.load.image('roof','Roof.png');
+        this.load.image('portal','Portal.png');
+        this.load.image('obsticle','obsticle.png');
 
 }
 
