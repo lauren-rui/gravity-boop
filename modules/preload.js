@@ -12,6 +12,8 @@ function preload() {
         this.load.image('roof','Roof.png');
         this.load.image('portal','Portal.png');
         this.load.image('obsticle','obsticle.png');
+        this.load.image('win', 'win.png');
+        this.load.image('death', 'death.png');
 
 }
 

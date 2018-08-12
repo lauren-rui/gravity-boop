@@ -61,6 +61,7 @@
             obsticle.body.setGravityX(-500);
             gravityState = 'left';
         }
+
         if (gravityRight.isDown)
         {
             player.body.setGravityY(0);
@@ -69,6 +70,7 @@
             obsticle.body.setGravityX(500);
             gravityState = 'right';
         }
+
     }
 
 
