@@ -1,6 +1,5 @@
 function create() {
 
-
     player = this.physics.add.sprite(150, 200, 'player');
 
     player.setBounce(0.2);
