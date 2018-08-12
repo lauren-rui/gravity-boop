@@ -2,7 +2,7 @@
     function update () {
         player.setVelocityX(0);
 
-        if (cursors.left.isDown)
+        if (cursors.left.isDown )
          {
              player.setVelocityX(-250);
          }
@@ -12,10 +12,18 @@
         }
 
 
-        if (cursors.up.isDown && (player.body.onFloor() || player.body.touching.down))
+        if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down))
         {
            player.setVelocityY(-400);
+
         }
+        if (gravityUp.isDown)
+        {
+            player.body.setGravityY(-500);
+            player.body.setGravityX(0);
+            obsticle.body.setGravityY(-500);
+            obsticle.body.setGravityX(0);
+        } 
     }
 
 
