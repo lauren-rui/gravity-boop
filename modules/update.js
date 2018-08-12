@@ -36,6 +36,15 @@
         if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down))
         {
            player.setVelocityY(-400);
+        } else if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.up))
+        {
+           player.setVelocityY(400);
+        } else if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.left))
+        {
+           player.setVelocityX(400);
+        } else if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.right))
+        {
+           player.setVelocityX(-400);
         }
         if (gravityUp.isDown)
         {
