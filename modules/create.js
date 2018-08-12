@@ -9,7 +9,7 @@ function create() {
     portal = this.physics.add.sprite(300, 400, 'portal');
 
     portal.setBounce(0);
-    portal.body.setGravityY(-200);
+    portal.body.setGravityY(0);
     portal.body.setGravityX(0);
     // make sure this gets reset each time the player changes the gravity
     obsticle = this.physics.add.sprite(250, 200, 'obsticle');
