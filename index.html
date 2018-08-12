@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="//cdn.jsdelivr.net/npm/phaser@3.0.0/dist/phaser.min.js"></script>
+    <script src="/node_modules/phaser/dist/phaser.min.js"></script>
 </head>
 <body>
 
@@ -18,40 +18,100 @@
         },
         scene: {
             preload: preload,
-            create: create
+            create: create,
+            update: update
         }
     };
 
     var game = new Phaser.Game(config);
 
-    function preload ()
-    {
-        this.load.setBaseURL('http://labs.phaser.io');
+    function preload() {
 
-        this.load.image('sky', 'assets/skies/space3.png');
-        this.load.image('logo', 'assets/sprites/phaser3-logo.png');
-        this.load.image('red', 'assets/particles/red.png');
+        // this.stage.backgroundColor = '#85b5e1';
+
+        this.load.baseURL = 'http://examples.phaser.io/assets/';
+        this.load.crossOrigin = 'anonymous';
+
+        this.load.image('player', 'sprites/32x32.png');
+        this.load.image('platform', 'sprites/platform.png');
+        this.load.image('wall', 'sprites/waters.png' );
+
     }
 
-    function create ()
-    {
-        this.add.image(400, 300, 'sky');
+    // function preload ()
+    // {
+    //     this.load.setBaseURL('http://labs.phaser.io');
 
-        var particles = this.add.particles('red');
+    //     this.load.image('sky', 'assets/skies/space3.png');
+    //     this.load.image('logo', 'assets/sprites/phaser3-logo.png');
+    //     this.load.image('red', 'assets/particles/red.png');
+    // }
 
-        var emitter = particles.createEmitter({
-            speed: 100,
-            scale: { start: 1, end: 0 },
-            blendMode: 'ADD'
-        });
+    // function create ()
+    // {
+    //     this.add.image(400, 300, 'sky');
 
-        var logo = this.physics.add.image(400, 100, 'logo');
+    //     var particles = this.add.particles('red');
 
-        logo.setVelocity(100, 200);
-        logo.setBounce(1, 1);
-        logo.setCollideWorldBounds(true);
+    //     var emitter = particles.createEmitter({
+    //         speed: 100,
+    //         scale: { start: 1, end: 0 },
+    //         blendMode: 'ADD'
+    //     });
 
-        emitter.startFollow(logo);
+    //     var logo = this.physics.add.image(400, 100, 'logo');
+
+    //     logo.setVelocity(100, 200);
+    //     logo.setBounce(1, 1);
+    //     logo.setCollideWorldBounds(true);
+
+    //     emitter.startFollow(logo);
+    // }
+
+    var player;
+    var platforms;
+    var cursors;
+    var jumpButton;
+
+    function create() {
+
+        player = this.physics.add.sprite(150, 200, 'player');
+
+        player.setBounce(0.2);
+        player.setCollideWorldBounds(true);
+        player.body.setGravityY(500);
+
+        platforms = this.physics.add.staticGroup();
+        
+        platforms.create(150, 0, 'platform');
+        platforms.create(150, 550, 'platform');
+        platforms.create(-900, 100, 'wall')
+        platforms.create(700, 100, 'wall')
+
+        this.physics.add.collider(player, platforms);
+
+        cursors = this.input.keyboard.createCursorKeys();
+        // jumpButton = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+    }
+
+    function update () {
+        // this.physics.arcade.collide(player, platforms);
+
+        // player.body.velocity.x = 0;
+
+        // if (cursors.left.isDown)
+        // {
+        //     player.body.velocity.x = -250;
+        // }
+        // else if (cursors.right.isDown)
+        // {
+        //     player.body.velocity.x = 250;
+        // }
+
+        // if (jumpButton.isDown && (player.body.onFloor() || player.body.touching.down))
+        // {
+        //     player.body.velocity.y = -400;
+        // }
     }
     </script>
 
