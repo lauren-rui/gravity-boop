@@ -20,11 +20,11 @@ function create() {
     obsticle.body.setGravityY(500);
 
     platforms = this.physics.add.staticGroup();
-        
-    platforms.create(150, 0, 'floor');
-    platforms.create(150, 550, 'roof');
-    platforms.create(-900, 100, 'leftWall');
-    platforms.create(700, 100, 'rightWall');
+
+    platforms.create(450, 10, 'roof');
+    platforms.create(450, 586, 'floor');
+    platforms.create(26, 100, 'rightWall');
+    platforms.create(700, 100, 'leftWall');
 
     this.physics.add.collider(player, obsticle);
 
