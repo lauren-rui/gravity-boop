@@ -20,7 +20,7 @@ function create() {
 
     platforms = this.physics.add.staticGroup();
 
-    platforms.create(450, 10, 'roof');
+    platforms.create(450, 15, 'roof');
     platforms.create(450, 586, 'floor');
     platforms.create(26, 300, 'leftWall');
     platforms.create(775, 300, 'rightWall');
